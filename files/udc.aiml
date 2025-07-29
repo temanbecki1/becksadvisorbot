@@ -1,7 +1,381 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<aiml>
-  <category>
-    <pattern>*</pattern>
-    <template>I have no answer for that.</template>
-  </category>
+<aiml version="2.0">
+	<!-- General Greetings and Introductions -->
+    <category>
+        <pattern>HELLO</pattern>
+        <template>
+            Hello! I'm Beckbot, your university's AI Career Advisor. I can help you explore computing job types based on your interests and strengths. What's your name?
+        </template>
+    </category>
+
+    <category>
+        <pattern>HI</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+
+    <category>
+        <pattern>HEY</pattern>
+        <template><srai>HELLO</srai></template>
+    </category>
+
+    <category>
+        <pattern>MY NAME IS *</pattern>
+        <template>
+            Nice to meet you, <set name="name"><star/></set>! Let's talk about your career. To help me recommend jobs, could you tell me a bit about your interests? For example, do you enjoy hands-on coding and building software?
+        </template>
+    </category>
+
+    <category>
+        <pattern>I AM *</pattern>
+        <template><srai>MY NAME IS <star/></srai></template>
+    </category>
+    
+    
+    <category>
+        <pattern>*</pattern>
+        <that>WHAT IS YOUR NAME</that>
+        <template>
+            Nice to meet you, <set name="name"><star/></set>! Let's talk about your career. To help me recommend jobs, could you tell me a bit about your interests? For example, do you enjoy hands-on coding and building software?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>YES</pattern>
+        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
+        <template>
+            Great! Coding is a fundamental skill. Do you also enjoy solving complex problems and designing new systems?
+            <set name="coding_interest">true</set>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>YEA</pattern>
+        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
+        <template>
+            Great! Coding is a fundamental skill. Do you also enjoy solving complex problems and designing new systems?
+            <set name="coding_interest">true</set>
+        </template>
+    </category>
+
+    <category>
+        <pattern>YES I ENJOY CODING</pattern>
+        <template>
+            Great! Coding is a fundamental skill. Do you also enjoy solving complex problems and designing new systems?
+            <set name="coding_interest">true</set>
+        </template>
+    </category>
+
+    <category>
+        <pattern>YES I DO</pattern>
+        <that>DO YOU ALSO ENJOY SOLVING COMPLEX PROBLEMS AND DESIGNING NEW SYSTEMS</that>
+        <template>
+            Excellent! That sounds like a strong fit for a Software Developer role. Would you like to know more about Software Developers? Or tell me if you have other interests, like analyzing data?
+            <set name="problem_solving_interest">true</set>
+        </template>
+    </category>
+
+    <category>
+        <pattern>NO *</pattern>
+        <template>
+            No problem, not all computing roles are purely about coding. Are you more interested in analyzing data and finding patterns?
+            <set name="coding_interest">false</set>
+        </template>
+    </category>
+
+    <!-- Interest-based questions and recommendations -->
+
+    <!-- Data Science Path -->
+    <category>
+        <pattern>YES I LIKE ANALYZING DATA</pattern>
+        <template>
+            That's fantastic! Do you also enjoy working with statistics, machine learning, and extracting insights from large datasets?
+            <set name="data_interest">true</set>
+        </template>
+    </category>
+
+    <category>
+        <pattern>YES I DO</pattern>
+        <that>DO YOU ALSO ENJOY WORKING WITH STATISTICS MACHINE LEARNING AND EXTRACTING INSIGHTS FROM LARGE DATASETS</that>
+        <template>
+            Wonderful! A Data Scientist or Data Analyst role might be perfect for you. Would you like to know more about Data Scientists? Or perhaps you're interested in cybersecurity?
+            <set name="stats_ml_interest">true</set>
+        </template>
+    </category>
+
+    <!-- Cybersecurity Path -->
+    <category>
+        <pattern>YES I AM INTERESTED IN CYBERSECURITY</pattern>
+        <template>
+            Intriguing! Do you have a strong interest in protecting systems, identifying vulnerabilities, and responding to security incidents?
+            <set name="cyber_interest">true</set>
+        </template>
+    </category>
+
+    <category>
+        <pattern>YES I DO</pattern>
+        <that>DO YOU HAVE A STRONG INTEREST IN PROTECTING SYSTEMS IDENTIFYING VULNERABILITIES AND RESPONDING TO SECURITY INCIDENTS</that>
+        <template>
+            That's a critical area! A Cybersecurity Analyst role sounds like a great fit for your skills. Shall I tell you more about it? Or are you curious about web development?
+            <set name="security_interest">true</set>
+        </template>
+    </category>
+
+    <!-- Web Development Path -->
+    <category>
+        <pattern>YES I AM CURIOUS ABOUT WEB DEVELOPMENT</pattern>
+        <template>
+            Excellent! Do you enjoy designing user interfaces, creating engaging web experiences, and perhaps working with databases for websites?
+            <set name="web_dev_interest">true</set>
+        </template>
+    </category>
+
+    <category>
+        <pattern>YES I DO</pattern>
+        <that>DO YOU ENJOY DESIGNING USER INTERFACES CREATING ENGAGING WEB EXPERIENCES AND PERHAPS WORKING WITH DATABASES FOR WEBSITES</that>
+        <template>
+            Fantastic! A Web Developer (Front-end or Back-end) could be a very rewarding path for you. Would you like details on this role? Or are you more interested in network infrastructure?
+            <set name="ui_db_interest">true</set>
+        </template>
+    </category>
+
+    <!-- Network Engineer Path -->
+    <category>
+        <pattern>YES I AM INTERESTED IN NETWORK INFRASTRUCTURE</pattern>
+        <template>
+            That's a foundational area of computing! Do you enjoy setting up, maintaining, and troubleshooting computer networks and ensuring connectivity?
+            <set name="network_interest">true</set>
+        </template>
+    </category>
+
+    <category>
+        <pattern>YES I DO</pattern>
+        <that>DO YOU ENJOY SETTING UP MAINTAINING AND TROUBLESHOOTING COMPUTER NETWORKS AND ENSURING CONNECTIVITY</that>
+        <template>
+            Perfect! A Network Engineer role aligns well with those interests. I can tell you more about Network Engineers. Is there anything else you'd like to explore, or would you like to hear about a different job type?
+            <set name="network_maint_interest">true</set>
+        </template>
+    </category>
+
+    <!-- General "Tell me more" for job types -->
+    <category>
+        <pattern>TELL ME MORE ABOUT SOFTWARE DEVELOPERS</pattern>
+        <template><srai>WHAT IS A SOFTWARE DEVELOPER</srai></template>
+    </category>
+    <category>
+        <pattern>WHAT IS A SOFTWARE DEVELOPER</pattern>
+        <template>
+            Software Developers design, develop, and maintain software applications. They need strong programming skills in languages like Python, Java, or C++, problem-solving abilities, and often collaborate in teams. They work in almost every industry, from tech companies to finance and healthcare.
+            <br/>
+            Does that sound interesting, <get name="name"/>?
+        </template>
+    </category>
+
+    <category>
+        <pattern>TELL ME MORE ABOUT DATA SCIENTISTS</pattern>
+        <template><srai>WHAT IS A DATA SCIENTIST</srai></template>
+    </category>
+    <category>
+        <pattern>WHAT IS A DATA SCIENTIST</pattern>
+        <template>
+            Data Scientists collect, clean, analyze, and interpret large datasets to uncover trends and insights. They use statistics, machine learning, and programming (often Python or R). They're highly valued in industries like finance, marketing, healthcare, and research for their ability to drive data-driven decisions.
+            <br/>
+            Does this path align with your goals, <get name="name"/>?
+        </template>
+    </category>
+
+    <category>
+        <pattern>TELL ME MORE ABOUT CYBERSECURITY ANALYSTS</pattern>
+        <template><srai>WHAT IS A CYBERSECURITY ANALYST</srai></template>
+    </category>
+    <category>
+        <pattern>WHAT IS A CYBERSECURITY ANALYST</pattern>
+        <template>
+            Cybersecurity Analysts protect an organization's computer systems and networks from cyber threats. They identify vulnerabilities, implement security measures, monitor for attacks, and respond to incidents. Strong analytical skills, knowledge of network security, and an understanding of ethical hacking are key. They are crucial in all sectors that handle sensitive data.
+            <br/>
+            Is protecting systems your passion, <get name="name"/>?
+        </template>
+    </category>
+
+    <category>
+        <pattern>TELL ME MORE ABOUT WEB DEVELOPERS</pattern>
+        <template><srai>WHAT IS A WEB DEVELOPER</srai></template>
+    </category>
+    <category>
+        <pattern>WHAT IS A WEB DEVELOPER</pattern>
+        <template>
+            Web Developers build and maintain websites. Front-end developers focus on the user interface (what you see and interact with) using HTML, CSS, and JavaScript. Back-end developers work on the server, databases, and application logic. They are needed in virtually every industry to create and manage online presences.
+            <br/>
+            Does building for the web excite you, <get name="name"/>?
+        </template>
+    </category>
+
+    <category>
+        <pattern>TELL ME MORE ABOUT NETWORK ENGINEERS</pattern>
+        <template><srai>WHAT IS A NETWORK ENGINEER</srai></template>
+    </category>
+    <category>
+        <pattern>WHAT IS A NETWORK ENGINEER</pattern>
+        <template>
+            Network Engineers design, implement, and manage computer networks, ensuring smooth data flow and connectivity. They work with routers, switches, firewalls, and network protocols. Strong problem-solving skills and a deep understanding of network architecture are essential. They are vital for any organization with a significant IT infrastructure.
+            <br/>
+            Are you interested in the backbone of computing, <get name="name"/>?
+        </template>
+    </category>
+
+    <!-- Handling "No" or "Not interested" -->
+    <category>
+        <pattern>NO</pattern>
+        <that>DO YOU ENJOY HANDS ON CODING AND BUILDING SOFTWARE</that>
+        <template>
+            Okay, perhaps coding isn't your primary interest. How about analyzing data and finding patterns?
+        </template>
+    </category>
+
+    <category>
+        <pattern>NO</pattern>
+        <that>DO YOU ALSO ENJOY WORKING WITH STATISTICS MACHINE LEARNING AND EXTRACTING INSIGHTS FROM LARGE DATASETS</that>
+        <template>
+            Understood. If data analysis isn't your focus, are you interested in cybersecurity and protecting systems?
+        </template>
+    </category>
+
+    <category>
+        <pattern>NO</pattern>
+        <that>DO YOU HAVE A STRONG INTEREST IN PROTECTING SYSTEMS IDENTIFYING VULNERABILITIES AND RESPONDING TO SECURITY INCIDENTS</that>
+        <template>
+            I see. How about building websites and creating engaging online experiences? Does web development appeal to you?
+        </template>
+    </category>
+
+    <category>
+        <pattern>NO</pattern>
+        <that>DO YOU ENJOY DESIGNING USER INTERFACES CREATING ENGAGING WEB EXPERIENCES AND PERHAPS WORKING WITH DATABASES FOR WEBSITES</that>
+        <template>
+            Alright. What about the infrastructure side of things? Are you interested in designing and managing computer networks?
+        </template>
+    </category>
+
+    <category>
+        <pattern>NO</pattern>
+        <that>DO YOU ENJOY SETTING UP MAINTAINING AND TROUBLESHOOTING COMPUTER NETWORKS AND ENSURING CONNECTIVITY</that>
+        <template>
+            Understood. It seems none of these specific areas fully align. Perhaps you could tell me in your own words what aspects of computer science excite you the most? Or would you like me to suggest another general area?
+        </template>
+    </category>
+
+    <!-- General "yes" and "no" for follow-up questions -->
+    <category>
+        <pattern>YES</pattern>
+        <that>DOES THAT SOUND INTERESTING *</that>
+        <template>
+            That's great to hear! Would you like to explore another job type, or do you have any specific questions about this one?
+        </template>
+    </category>
+
+    <category>
+        <pattern>NO</pattern>
+        <that>DOES THAT SOUND INTERESTING *</that>
+        <template>
+            Understood. Let's explore other options then. What other interests do you have in computer science?
+        </template>
+    </category>
+
+    <category>
+        <pattern>YES</pattern>
+        <that>DOES THIS PATH ALIGN WITH YOUR GOALS *</that>
+        <template>
+            Excellent! What else would you like to know, or shall we look at another career path?
+        </template>
+    </category>
+
+    <category>
+        <pattern>NO</pattern>
+        <that>DOES THIS PATH ALIGN WITH YOUR GOALS *</that>
+        <template>
+            No problem. Let's consider something else. What other areas of computing are you curious about?
+        </template>
+    </category>
+
+    <category>
+        <pattern>YES</pattern>
+        <that>IS PROTECTING SYSTEMS YOUR PASSION *</that>
+        <template>
+            Wonderful! Is there anything specific about Cybersecurity Analyst that you'd like to know, or should we move on to another role?
+        </template>
+    </category>
+
+    <category>
+        <pattern>NO</pattern>
+        <that>IS PROTECTING SYSTEMS YOUR PASSION *</that>
+        <template>
+            Okay, let's look elsewhere. What other aspects of computer science interest you?
+        </template>
+    </category>
+
+    <category>
+        <pattern>YES</pattern>
+        <that>DOES BUILDING FOR THE WEB EXCITE YOU *</that>
+        <template>
+            Fantastic! What specific questions do you have about Web Development, or should we explore another career?
+        </template>
+    </category>
+
+    <category>
+        <pattern>NO</pattern>
+        <that>DOES BUILDING FOR THE WEB EXCITE YOU *</that>
+        <template>
+            Understood. Let's try a different direction. What other areas of computer science are you considering?
+        </template>
+    </category>
+
+    <category>
+        <pattern>YES</pattern>
+        <that>ARE YOU INTERESTED IN THE BACKBONE OF COMPUTING *</that>
+        <template>
+            Great! Anything specific about Network Engineering you'd like to know, or should we explore other options?
+        </template>
+    </category>
+
+    <category>
+        <pattern>NO</pattern>
+        <that>ARE YOU INTERESTED IN THE BACKBONE OF COMPUTING *</that>
+        <template>
+            Understood. It seems we need to find a better fit. Could you tell me more about what you envision yourself doing after graduation?
+        </template>
+    </category>
+
+    <!-- Handling "Thank you" and "Goodbye" -->
+    <category>
+        <pattern>THANK YOU</pattern>
+        <template>
+            You're welcome, <get name="name"/>! I'm here to help. Is there anything else I can assist you with today regarding your career path?
+        </template>
+    </category>
+
+    <category>
+        <pattern>THANKS</pattern>
+        <template><srai>THANK YOU</srai></template>
+    </category>
+
+    <category>
+        <pattern>GOODBYE</pattern>
+        <template>
+            Goodbye, <get name="name"/>! Best of luck with your career search. Remember, you can always come back if you have more questions.
+        </template>
+    </category>
+
+    <category>
+        <pattern>BYE</pattern>
+        <template><srai>GOODBYE</srai></template>
+    </category>
+
+    <!-- Fallback for unhandled input -->
+    <category>
+        <pattern>*</pattern>
+        <template>
+            I'm still learning, <get name="name"/>. Could you please rephrase that, or tell me more about your interests in computer science careers? You can ask me about Software Developers, Data Scientists, Cybersecurity Analysts, Web Developers, or Network Engineers.
+        </template>
+    </category>
+
+
 </aiml>
