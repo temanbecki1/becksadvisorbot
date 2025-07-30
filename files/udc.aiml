@@ -342,6 +342,42 @@
     </category>
     
     <category>
+        <pattern>YES</pattern>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT DATA SCIENTISTS OR CYBERSECURITY ANALYSTS</that>
+        <template>
+            <srai>TELL ME MORE ABOUT DATA SCIENTISTS</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>YES PLEASE</pattern>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT DATA SCIENTISTS OR CYBERSECURITY ANALYSTS</that>
+        <template><srai>YES</srai></template>
+    </category>
+    <category>
+        <pattern>SURE</pattern>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT DATA SCIENTISTS OR CYBERSECURITY ANALYSTS</that>
+        <template><srai>YES</srai></template>
+    </category>
+    
+    <category>
+        <pattern>NO</pattern>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT DATA SCIENTISTS OR CYBERSECURITY ANALYSTS</that>
+        <template>
+            Alright, let's look at Cybersecurity Analysts then.
+            <srai>TELL ME MORE ABOUT CYBERSECURITY ANALYSTS</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>NO THANKS</pattern>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT DATA SCIENTISTS OR CYBERSECURITY ANALYSTS</that>
+        <template><srai>NO</srai></template>
+    </category>
+    <category>
+        <pattern>NOPE</pattern>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT DATA SCIENTISTS OR CYBERSECURITY ANALYSTS</that>
+        <template><srai>NO</srai></template>
+    </category>
+    <category>
         <pattern>_ SET DATA INTEREST *</pattern>
         <template>
             <set name="data_interest"><star/></set>
@@ -352,6 +388,43 @@
         <pattern>_ SET STATS ML INTEREST *</pattern> <template>
             <set name="stats_ml_interest"><star/></set>
         </template>
+    </category>
+    
+    <category>
+        <pattern>YES</pattern>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT DATA SCIENTISTS OR CYBERSECURITY ANALYSTS</that>
+        <template>
+            <srai>TELL ME MORE ABOUT DATA SCIENTISTS</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>YES PLEASE</pattern>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT DATA SCIENTISTS OR CYBERSECURITY ANALYSTS</that>
+        <template><srai>YES</srai></template>
+    </category>
+    <category>
+        <pattern>SURE</pattern>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT DATA SCIENTISTS OR CYBERSECURITY ANALYSTS</that>
+        <template><srai>YES</srai></template>
+    </category>
+    
+    <category>
+        <pattern>NO</pattern>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT DATA SCIENTISTS OR CYBERSECURITY ANALYSTS</that>
+        <template>
+            Alright, let's look at Cybersecurity Analysts then.
+            <srai>TELL ME MORE ABOUT CYBERSECURITY ANALYSTS</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>NO THANKS</pattern>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT DATA SCIENTISTS OR CYBERSECURITY ANALYSTS</that>
+        <template><srai>NO</srai></template>
+    </category>
+    <category>
+        <pattern>NOPE</pattern>
+        <that>WOULD YOU LIKE TO KNOW MORE ABOUT DATA SCIENTISTS OR CYBERSECURITY ANALYSTS</that>
+        <template><srai>NO</srai></template>
     </category>
     
 
@@ -590,6 +663,33 @@
     </category>
     
     <category>
+        <pattern>DEFINITION CYBERSECURITY ANALYST</pattern>
+        <template>
+            Cybersecurity Analysts protect an organization's computer systems and networks from cyber threats. They identify vulnerabilities, implement security measures, monitor for attacks, and respond to incidents. Strong analytical skills, knowledge of network security, and an understanding of ethical hacking are key. They are crucial in all sectors that handle sensitive data.
+            <br/>
+            Is protecting systems your passion, <get name="name"/>?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>DEFINITION WEB DEVELOPER</pattern>
+        <template>
+            Web Developers build and maintain websites. Front-end developers focus on the user interface (what you see and interact with) using HTML, CSS, and JavaScript. Back-end developers work on the server, databases, and application logic. They are needed in virtually every industry to create and manage online presences.
+            <br/>
+            Does building for the web excite you, <get name="name"/>?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>DEFINITION NETWORK ENGINEER</pattern>
+        <template>
+            Network Engineers design, implement, and manage computer networks, ensuring smooth data flow and connectivity. They work with routers, switches, firewalls, and network protocols. Strong problem-solving skills and a deep understanding of network architecture are essential. They are vital for any organization with a significant IT infrastructure.
+            <br/>
+            Are you interested in the backbone of computing, <get name="name"/>?
+        </template>
+    </category>
+    
+    <category>
         <pattern>DEFINITION</pattern>
         <template>
             I'm sorry, I don't have information on that specific role. You can ask me about Software Developers, Data Scientists, Cybersecurity Analysts, Web Developers, or Network Engineers.
@@ -673,7 +773,7 @@
 
     <category>
         <pattern>YES</pattern>
-        <that>DOES THIS PATH ALIGN WITH YOUR GOALS *</that>
+        <that>DOES THIS PATH ALIGN WITH YOUR GOALS, *</that>
         <template>
             Excellent! What else would you like to know, or shall we look at another career path?
         </template>
@@ -681,15 +781,26 @@
 
     <category>
         <pattern>NO</pattern>
-        <that>DOES THIS PATH ALIGN WITH YOUR GOALS *</that>
+        <that>DOES THIS PATH ALIGN WITH YOUR GOALS, *</that>
         <template>
-            No problem. Let's consider something else. What other areas of computing are you curious about?
+            Understood. How about we look at Cybersecurity Analysts then?
+            <srai>TELL ME MORE ABOUT CYBERSECURITY ANALYSTS</srai>        
         </template>
+    </category>
+    <category>
+        <pattern>NOPE</pattern>
+        <that>DOES THIS PATH ALIGN WITH YOUR GOALS, *</that>
+        <template><srai>NO</srai></template>
+    </category>
+    <category>
+        <pattern>NOT REALLY</pattern>
+        <that>DOES THIS PATH ALIGN WITH YOUR GOALS, *</that>
+        <template><srai>NO</srai></template>
     </category>
 
     <category>
         <pattern>YES</pattern>
-        <that>IS PROTECTING SYSTEMS YOUR PASSION *</that>
+        <that>IS PROTECTING SYSTEMS YOUR PASSION, *</that>
         <template>
             Wonderful! Is there anything specific about Cybersecurity Analyst that you'd like to know, or should we move on to another role?
         </template>
@@ -697,7 +808,7 @@
 
     <category>
         <pattern>NO</pattern>
-        <that>IS PROTECTING SYSTEMS YOUR PASSION *</that>
+        <that>IS PROTECTING SYSTEMS YOUR PASSION, *</that>
         <template>
             Okay, let's look elsewhere. What other aspects of computer science interest you?
         </template>
@@ -705,7 +816,7 @@
 
     <category>
         <pattern>YES</pattern>
-        <that>DOES BUILDING FOR THE WEB EXCITE YOU *</that>
+        <that>DOES BUILDING FOR THE WEB EXCITE YOU, *</that>
         <template>
             Fantastic! What specific questions do you have about Web Development, or should we explore another career?
         </template>
@@ -713,7 +824,7 @@
 
     <category>
         <pattern>NO</pattern>
-        <that>DOES BUILDING FOR THE WEB EXCITE YOU *</that>
+        <that>DOES BUILDING FOR THE WEB EXCITE YOU, *</that>
         <template>
             Understood. Let's try a different direction. What other areas of computer science are you considering?
         </template>
@@ -721,7 +832,7 @@
 
     <category>
         <pattern>YES</pattern>
-        <that>ARE YOU INTERESTED IN THE BACKBONE OF COMPUTING *</that>
+        <that>ARE YOU INTERESTED IN THE BACKBONE OF COMPUTING, *</that>
         <template>
             Great! Anything specific about Network Engineering you'd like to know, or should we explore other options?
         </template>
@@ -729,7 +840,7 @@
 
     <category>
         <pattern>NO</pattern>
-        <that>ARE YOU INTERESTED IN THE BACKBONE OF COMPUTING *</that>
+        <that>ARE YOU INTERESTED IN THE BACKBONE OF COMPUTING, *</that>
         <template>
             Understood. It seems none of these specific areas fully align. Perhaps you could tell me in your own words what aspects of computer science excite you the most? Or would you like me to suggest another general area?
         </template>
@@ -772,6 +883,82 @@
         <template><srai>NO</srai></template>
     </category>
 
+    <category>
+        <pattern>NO</pattern>
+        <that>IS THERE ANYTHING SPECIFIC ABOUT CYBERSECURITY ANALYST THAT YOU HAD LIKE TO KNOW, OR SHOULD WE MOVE ON TO ANOTHER ROLE</that>
+        <template>
+            Understood. How about building websites and creating engaging online experiences? Does web development appeal to you?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>NOPE</pattern>
+        <that>IS THERE ANYTHING SPECIFIC ABOUT CYBERSECURITY ANALYST THAT YOU HAD LIKE TO KNOW, OR SHOULD WE MOVE ON TO ANOTHER ROLE</that>
+        <template><srai>NO</srai></template>
+    </category>
+    
+    <category>
+        <pattern>NOT REALLY</pattern>
+        <that>IS THERE ANYTHING SPECIFIC ABOUT CYBERSECURITY ANALYST THAT YOU HAD LIKE TO KNOW, OR SHOULD WE MOVE ON TO ANOTHER ROLE</that>
+        <template><srai>NO</srai></template>
+    </category>
+    
+    <category>
+        <pattern>NO THANKS</pattern>
+        <that>IS THERE ANYTHING SPECIFIC ABOUT CYBERSECURITY ANALYST THAT YOU HAD LIKE TO KNOW, OR SHOULD WE MOVE ON TO ANOTHER ROLE</that>
+        <template><srai>NO</srai></template>
+    </category>
+    
+    <category>
+        <pattern>YES</pattern>
+        <that>DOES WEB DEVELOPMENT APPEAL TO YOU</that>
+        <template>
+            Excellent! Let's explore that.
+            <srai>TELL ME MORE ABOUT WEB DEVELOPERS</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>YES PLEASE</pattern>
+        <that>DOES WEB DEVELOPMENT APPEAL TO YOU</that>
+        <template><srai>YES</srai></template>
+    </category>
+    <category>
+        <pattern>YEP</pattern>
+        <that>DOES WEB DEVELOPMENT APPEAL TO YOU</that>
+        <template><srai>YES</srai></template>
+    </category>
+    <category>
+        <pattern>SURE</pattern>
+        <that>DOES WEB DEVELOPMENT APPEAL TO YOU</that>
+        <template><srai>YES</srai></template>
+    </category>
+    
+    
+    <category>
+        <pattern>NO</pattern>
+        <that>DOES WEB DEVELOPMENT APPEAL TO YOU</that>
+        <template>
+            Understood. What about the infrastructure side of things? Are you interested in designing and managing computer networks?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>NOPE</pattern>
+        <that>DOES WEB DEVELOPMENT APPEAL TO YOU</that>
+        <template><srai>NO</srai></template>
+    </category>
+    <category>
+        <pattern>NOT REALLY</pattern>
+        <that>DOES WEB DEVELOPMENT APPEAL TO YOU</that>
+        <template><srai>NO</srai></template>
+    </category>
+    <category>
+        <pattern>NO THANKS</pattern>
+        <that>DOES WEB DEVELOPMENT APPEAL TO YOU</that>
+        <template><srai>NO</srai></template>
+    </category>
+    
     <!-- Handling "Thank you" and "Goodbye" -->
     <category>
     <pattern>NO</pattern>
