@@ -317,8 +317,8 @@
     <category>
         <pattern>YES I AM CURIOUS ABOUT WEB DEVELOPMENT</pattern>
         <template>
+            <think><srai>_ SET WEB DEV INTEREST TRUE</srai></think>
             Excellent! Do you enjoy designing user interfaces, creating engaging web experiences, and perhaps working with databases for websites?
-            <set name="web_dev_interest">true</set>
         </template>
     </category>
     <category>
@@ -341,8 +341,8 @@
         <pattern>YES I DO</pattern>
         <that>DO YOU ENJOY DESIGNING USER INTERFACES CREATING ENGAGING WEB EXPERIENCES AND PERHAPS WORKING WITH DATABASES FOR WEBSITES</that>
         <template>
+            <think><srai>_ SET UI DB INTEREST TRUE</srai></think>
             Fantastic! A Web Developer (Front-end or Back-end) could be a very rewarding path for you. Would you like details on this role? Or are you more interested in network infrastructure?
-            <set name="ui_db_interest">true</set>
         </template>
     </category>
 
@@ -350,9 +350,9 @@
         <pattern>NO</pattern>
         <that>DO YOU ENJOY DESIGNING USER INTERFACES CREATING ENGAGING WEB EXPERIENCES AND PERHAPS WORKING WITH DATABASES FOR WEBSITES</that>
         <template>
+            <think><srai>_ SET WEB DEV INTEREST FALSE</srai></think>
             Alright. What about the infrastructure side of things? Are you interested in designing and managing computer networks?
-            <set name="web_dev_interest">false</set>
-        </template>
+            </template>
     </category>
     <category>
         <pattern>NOPE</pattern>
@@ -368,6 +368,20 @@
         <pattern>NO I DONT</pattern>
         <that>DO YOU ENJOY DESIGNING USER INTERFACES CREATING ENGAGING WEB EXPERIENCES AND PERHAPS WORKING WITH DATABASES FOR WEBSITES</that>
         <template><srai>NO</srai></template>
+    </category>
+    
+    <category>
+        <pattern>_ SET UI DB INTEREST *</pattern>
+        <template>
+            <set name="ui_db_interest"><star/></set>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>_ SET WEB DEV INTEREST *</pattern>
+        <template>
+            <set name="web_dev_interest"><star/></set>
+        </template>
     </category>
 
 
