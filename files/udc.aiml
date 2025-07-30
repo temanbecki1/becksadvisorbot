@@ -750,6 +750,57 @@
         </template>
     </category>
     
+    <category>
+        <pattern>SOFTWARE DEVELOPERS</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT SOFTWARE DEVELOPERS</srai></template>
+    </category>
+    <category>
+        <pattern>SOFTWARE DEVELOPER</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT SOFTWARE DEVELOPERS</srai></template>
+    </category>
+    <category>
+        <pattern>DATA SCIENTISTS</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT DATA SCIENTISTS</srai></template>
+    </category>
+    <category>
+        <pattern>DATA SCIENTIST</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT DATA SCIENTISTS</srai></template>
+    </category>
+    <category>
+        <pattern>CYBERSECURITY ANALYSTS</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT CYBERSECURITY ANALYSTS</srai></template>
+    </category>
+    <category>
+        <pattern>CYBERSECURITY ANALYST</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT CYBERSECURITY ANALYSTS</srai></template>
+    </category>
+    <category>
+        <pattern>WEB DEVELOPERS</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT WEB DEVELOPERS</srai></template>
+    </category>
+    <category>
+        <pattern>WEB DEVELOPER</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT WEB DEVELOPERS</srai></template>
+    </category>
+    <category>
+        <pattern>NETWORK ENGINEERS</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT NETWORK ENGINEERS</srai></template>
+    </category>
+    <category>
+        <pattern>NETWORK ENGINEER</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT NETWORK ENGINEERS</srai></template>
+    </category>
+        
     
     <category>
         <pattern>TELL ME MORE ABOUT *</pattern>
