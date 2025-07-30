@@ -112,7 +112,7 @@
         <pattern>YES I AM</pattern>
         <that>ARE YOU MORE INTERESTED IN ANALYZING DATA AND FINDING PATTERNS</that>
         <template>
-            <think><srai>_ SET DATA ANALYSIS INTEREST </srai></think>
+            <think><srai>_ SET DATA ANALYSIS INTEREST TRUE </srai></think>
             That's great! Data analysis is a highly in-demand skill. Would you like to know more about Data Scientists or Cybersecurity Analysts?
         </template>
     </category>
@@ -246,8 +246,8 @@
     <category>
         <pattern>YES I AM INTERESTED IN CYBERSECURITY</pattern>
         <template>
+            <think><srai>_ SET CYBER INTEREST TRUE</srai></think>
             Intriguing! Do you have a strong interest in protecting systems, identifying vulnerabilities, and responding to security incidents?
-            <set name="cyber_interest">true</set>
         </template>
     </category>
     <category>
@@ -270,8 +270,8 @@
         <pattern>YES I DO</pattern>
         <that>DO YOU HAVE A STRONG INTEREST IN PROTECTING SYSTEMS IDENTIFYING VULNERABILITIES AND RESPONDING TO SECURITY INCIDENTS</that>
         <template>
+            <think><srai>_ SET SECURITY INTEREST TRUE</srai></think>
             That's a critical area! A Cybersecurity Analyst role sounds like a great fit for your skills. Shall I tell you more about it? Or are you curious about web development?
-            <set name="security_interest">true</set>
         </template>
     </category>
 
@@ -279,8 +279,8 @@
         <pattern>NO</pattern>
         <that>DO YOU HAVE A STRONG INTEREST IN PROTECTING SYSTEMS IDENTIFYING VULNERABILITIES AND RESPONDING TO SECURITY INCIDENTS</that>
         <template>
+            <think><srai>_ SET CYBER INTEREST FALSE</srai></think>
             I see. How about building websites and creating engaging online experiences? Does web development appeal to you?
-            <set name="cyber_interest">false</set>
         </template>
     </category>
     <category>
@@ -298,7 +298,20 @@
         <that>DO YOU HAVE A STRONG INTEREST IN PROTECTING SYSTEMS IDENTIFYING VULNERABILITIES AND RESPONDING TO SECURITY INCIDENTS</that>
         <template><srai>NO</srai></template>
     </category>
+    
+    <category>
+        <pattern>_ SET SECURITY INTEREST *</pattern>
+        <template>
+            <set name="security_interest"><star/></set>
+        </template>
+    </category>
 
+     <category>
+        <pattern>_ SET CYBER INTEREST *</pattern>
+        <template>
+            <set name="cyber_interest"><star/></set>
+        </template>
+    </category>
 
     <!-- Web Development Path: Do you enjoy designing user interfaces, creating engaging web experiences, and perhaps working with databases for websites? -->
     <category>
