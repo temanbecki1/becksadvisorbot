@@ -161,6 +161,65 @@
         </template>
     </category>
     
+    <category>
+        <pattern>YES</pattern>
+        <that>OR TELL ME IF YOU HAVE OTHER INTERESTS, LIKE ANALYZING DATA</that>
+        <template>
+            <srai>TELL ME MORE ABOUT SOFTWARE DEVELOPERS</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>NO</pattern>
+        <that>OR TELL ME IF YOU HAVE OTHER INTERESTS, LIKE ANALYZING DATA</that>
+        <template>
+            Okay, let's explore your other interests. Are you more interested in analyzing data and finding patterns?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>YES TELL ME MORE</pattern>
+        <that>OR TELL ME IF YOU HAVE OTHER INTERESTS, LIKE ANALYZING DATA</that>
+        <template><srai>TELL ME MORE ABOUT SOFTWARE DEVELOPERS</srai></template>
+    </category>
+    <category>
+        <pattern>NO LETS MOVE ON</pattern>
+        <that>OR TELL ME IF YOU HAVE OTHER INTERESTS, LIKE ANALYZING DATA</that>
+        <template>Okay, let's explore your other interests. Are you more interested in analyzing data and finding patterns?</template>
+    </category>
+    
+    <category>
+        <pattern>NONE</pattern>
+        <that>WHAT SPECIFIC QUESTIONS DO YOU HAVE ABOUT THE SOFTWARE DEVELOPER ROLE THEN</that>
+        <template>
+            Understood. Is there anything else you'd like to explore, or would you like to hear about a different job type?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>NO QUESTIONS</pattern>
+        <that>WHAT SPECIFIC QUESTIONS DO YOU HAVE ABOUT THE SOFTWARE DEVELOPER ROLE THEN</that>
+        <template><srai>NONE</srai></template>
+    </category>
+    
+    <category>
+        <pattern>NO I DONT</pattern>
+        <that>WHAT SPECIFIC QUESTIONS DO YOU HAVE ABOUT THE SOFTWARE DEVELOPER ROLE THEN</that>
+        <template><srai>NONE</srai></template>
+    </category>
+    
+    <category>
+        <pattern>NOT REALLY</pattern>
+        <that>WHAT SPECIFIC QUESTIONS DO YOU HAVE ABOUT THE SOFTWARE DEVELOPER ROLE THEN</that>
+        <template><srai>NONE</srai></template>
+    </category>
+    
+    <category>
+        <pattern>NO</pattern>
+        <that>WHAT SPECIFIC QUESTIONS DO YOU HAVE ABOUT THE SOFTWARE DEVELOPER ROLE THEN</that>
+        <template><srai>NONE</srai></template>
+    </category>
+    
 
     <!-- Follow-up question: Do you also enjoy solving complex problems and designing new systems? -->
     <category>
@@ -595,9 +654,10 @@
     </category>
 
     <!-- General "yes" and "no" for follow-up questions -->
+    
     <category>
         <pattern>YES</pattern>
-        <that>DOES THAT SOUND INTERESTING *</that>
+        <that>DOES THAT SOUND INTERESTING, *</that>
         <template>
             That's great to hear! Would you like to explore another job type, or do you have any specific questions about this one?
         </template>
@@ -605,7 +665,7 @@
 
     <category>
         <pattern>NO</pattern>
-        <that>DOES THAT SOUND INTERESTING *</that>
+        <that>DOES THAT SOUND INTERESTING, *</that>
         <template>
             Understood. Let's explore other options then. What other interests do you have in computer science?
         </template>
@@ -674,8 +734,75 @@
             Understood. It seems none of these specific areas fully align. Perhaps you could tell me in your own words what aspects of computer science excite you the most? Or would you like me to suggest another general area?
         </template>
     </category>
+    
+    <category>
+        <pattern>YES</pattern>
+        <that>WOULD YOU LIKE TO EXPLORE ANOTHER JOB TYPE, OR DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT THIS ONE</that>
+        <template>
+            Excellent! What other job types are you interested in?
+        </template>
+    </category>
+    <category>
+        <pattern>YES PLEASE</pattern>
+        <that>WOULD YOU LIKE TO EXPLORE ANOTHER JOB TYPE, OR DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT THIS ONE</that>
+        <template><srai>YES</srai></template>
+    </category>
+    <category>
+        <pattern>SURE</pattern>
+        <that>WOULD YOU LIKE TO EXPLORE ANOTHER JOB TYPE, OR DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT THIS ONE</that>
+        <template><srai>YES</srai></template>
+    </category>
+    
+    
+    <category>
+        <pattern>NO</pattern>
+        <that>WOULD YOU LIKE TO EXPLORE ANOTHER JOB TYPE, OR DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT THIS ONE</that>
+        <template>
+            Understood. What specific questions do you have about the Software Developer role then?
+        </template>
+    </category>
+    <category>
+        <pattern>NO THANK YOU</pattern>
+        <that>WOULD YOU LIKE TO EXPLORE ANOTHER JOB TYPE, OR DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT THIS ONE</that>
+        <template><srai>NO</srai></template>
+    </category>
+    <category>
+        <pattern>NOPE</pattern>
+        <that>WOULD YOU LIKE TO EXPLORE ANOTHER JOB TYPE, OR DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT THIS ONE</that>
+        <template><srai>NO</srai></template>
+    </category>
 
     <!-- Handling "Thank you" and "Goodbye" -->
+    <category>
+    <pattern>NO</pattern>
+        <that>IS THERE ANYTHING ELSE YOU HAD LIKE TO EXPLORE, OR WOULD YOU LIKE TO HEAR ABOUT A DIFFERENT JOB TYPE</that>
+        <template><srai>GOODBYE</srai></template>
+    </category>
+    
+    <category>
+        <pattern>NOPE</pattern>
+        <that>IS THERE ANYTHING ELSE YOU HAD LIKE TO EXPLORE, OR WOULD YOU LIKE TO HEAR ABOUT A DIFFERENT JOB TYPE</that>
+        <template><srai>GOODBYE</srai></template>
+    </category>
+    
+    <category>
+        <pattern>NOT REALLY</pattern>
+        <that>IS THERE ANYTHING ELSE YOU HAD LIKE TO EXPLORE, OR WOULD YOU LIKE TO HEAR ABOUT A DIFFERENT JOB TYPE</that>
+        <template><srai>GOODBYE</srai></template>
+    </category>
+    
+    <category>
+        <pattern>NO THANKS</pattern>
+        <that>IS THERE ANYTHING ELSE YOU HAD LIKE TO EXPLORE, OR WOULD YOU LIKE TO HEAR ABOUT A DIFFERENT JOB TYPE</that>
+        <template><srai>GOODBYE</srai></template>
+    </category>
+    
+    <category>
+        <pattern>I AM DONE</pattern>
+        <that>IS THERE ANYTHING ELSE YOU HAD LIKE TO EXPLORE, OR WOULD YOU LIKE TO HEAR ABOUT A DIFFERENT JOB TYPE</that>
+        <template><srai>GOODBYE</srai></template>
+    </category>
+    
     <category>
         <pattern>THANK YOU</pattern>
         <template>
