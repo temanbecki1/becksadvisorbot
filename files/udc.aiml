@@ -427,6 +427,53 @@
         <template><srai>NO</srai></template>
     </category>
     
+    <category>
+        <pattern>YES</pattern>
+        <that>OKAY, IF NOT DATA ANALYSIS, ARE YOU MORE INCLINED TOWARDS MANAGING INFRASTRUCTURE OR ENSURING SYSTEM SECURITY</that>
+        <template>
+            Excellent! Let's delve into that.
+            <srai>TELL ME MORE ABOUT CYBERSECURITY ANALYSTS</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>YES PLEASE</pattern>
+        <that>OKAY, IF NOT DATA ANALYSIS, ARE YOU MORE INCLINED TOWARDS MANAGING INFRASTRUCTURE OR ENSURING SYSTEM SECURITY</that>
+        <template><srai>YES</srai></template>
+    </category>
+    <category>
+        <pattern>YEP</pattern>
+        <that>OKAY, IF NOT DATA ANALYSIS, ARE YOU MORE INCLINED TOWARDS MANAGING INFRASTRUCTURE OR ENSURING SYSTEM SECURITY</that>
+        <template><srai>YES</srai></template>
+    </category>
+    <category>
+        <pattern>SURE</pattern>
+        <that>OKAY, IF NOT DATA ANALYSIS, ARE YOU MORE INCLINED TOWARDS MANAGING INFRASTRUCTURE OR ENSURING SYSTEM SECURITY</that>
+        <template><srai>YES</srai></template>
+    </category>
+    
+    
+    <category>
+        <pattern>NO</pattern>
+        <that>OKAY, IF NOT DATA ANALYSIS, ARE YOU MORE INCLINED TOWARDS MANAGING INFRASTRUCTURE OR ENSURING SYSTEM SECURITY</that>
+        <template>
+            Understood. How about building websites and creating engaging online experiences? Does web development appeal to you?
+        </template>
+    </category>
+    <category>
+        <pattern>NOPE</pattern>
+        <that>OKAY, IF NOT DATA ANALYSIS, ARE YOU MORE INCLINED TOWARDS MANAGING INFRASTRUCTURE OR ENSURING SYSTEM SECURITY</that>
+        <template><srai>NO</srai></template>
+    </category>
+    <category>
+        <pattern>NOT REALLY</pattern>
+        <that>OKAY, IF NOT DATA ANALYSIS, ARE YOU MORE INCLINED TOWARDS MANAGING INFRASTRUCTURE OR ENSURING SYSTEM SECURITY</that>
+        <template><srai>NO</srai></template>
+    </category>
+    <category>
+        <pattern>NO THANKS</pattern>
+        <that>OKAY, IF NOT DATA ANALYSIS, ARE YOU MORE INCLINED TOWARDS MANAGING INFRASTRUCTURE OR ENSURING SYSTEM SECURITY</that>
+        <template><srai>NO</srai></template>
+    </category>
 
 
     <!-- Cybersecurity Path: Do you have a strong interest in protecting systems, identifying vulnerabilities, and responding to security incidents? -->
