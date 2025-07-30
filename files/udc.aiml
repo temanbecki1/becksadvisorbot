@@ -42,34 +42,6 @@
     </category>
     
     <!-- Initial interest question: Do you enjoy hands-on coding and building software? -->
-        <category>
-        <pattern>NO I DO NOT ENJOY CODING</pattern>
-        <template>
-            <think><srai>_ SET CODING INTEREST FALSE</srai> </think>
-            No problem, not all computing roles are purely about coding. Are you more interested in analyzing data and finding patterns?
-        </template>
-    </category>
-    <category>
-        <pattern>NO</pattern>
-        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
-        <template><srai>NO I DO NOT ENJOY CODING</srai></template>
-    </category>
-    <category>
-        <pattern>NOPE</pattern>
-        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
-        <template><srai>NO I DO NOT ENJOY CODING</srai></template>
-    </category>
-    <category>
-        <pattern>NOT REALLY</pattern>
-        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
-        <template><srai>NO I DO NOT ENJOY CODING</srai></template>
-    </category>
-    <category>
-        <pattern>NO SIR</pattern>
-        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
-        <template><srai>NO I DO NOT ENJOY CODING</srai></template>
-    </category>
-    
     <category>
         <pattern>YES I ENJOY CODING</pattern>
         <template>
@@ -99,13 +71,96 @@
     </category>
     
     <category>
+        <pattern>NO I DO NOT ENJOY CODING</pattern>
+        <template>
+            <think><srai>_ SET CODING INTEREST FALSE</srai> </think>
+            No problem, not all computing roles are purely about coding. Are you more interested in analyzing data and finding patterns?
+        </template>
+    </category>
+    <category>
+        <pattern>NO</pattern>
+        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
+        <template><srai>NO I DO NOT ENJOY CODING</srai></template>
+    </category>
+    <category>
+        <pattern>NOPE</pattern>
+        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
+        <template><srai>NO I DO NOT ENJOY CODING</srai></template>
+    </category>
+    <category>
+        <pattern>NOT REALLY</pattern>
+        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
+        <template><srai>NO I DO NOT ENJOY CODING</srai></template>
+    </category>
+    <category>
+        <pattern>NO SIR</pattern>
+        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
+        <template><srai>NO I DO NOT ENJOY CODING</srai></template>
+    </category>
+    
+    <category>
         <pattern>_ SET CODING INTEREST *</pattern>
         <template>
             <set name="coding_interest"><star/></set>
         </template>
     </category>
-
-
+    
+    <category>
+        <pattern>YES I DO</pattern>
+        <that>DO YOU ALSO ENJOY SOLVING COMPLEX PROBLEMS AND DESIGNING NEW SYSTEMS</that>
+        <template>
+            <think><srai>_ SET PROBLEM SOLVING INTEREST TRUE</srai></think>
+            Excellent! That sounds like a strong fit for a Software Developer role. Would you like to know more about Software Developers? Or tell me if you have other interests, like analyzing data?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>YES</pattern>
+        <that>DO YOU ALSO ENJOY SOLVING COMPLEX PROBLEMS AND DESIGNING NEW SYSTEMS</that>
+        <template><srai>YES I DO</srai></template>
+    </category>
+    <category>
+        <pattern>YEP</pattern>
+        <that>DO YOU ALSO ENJOY SOLVING COMPLEX PROBLEMS AND DESIGNING NEW SYSTEMS</that>
+        <template><srai>YES I DO</srai></template>
+    </category>
+    <category>
+        <pattern>SURE</pattern>
+        <that>DO YOU ALSO ENJOY SOLVING COMPLEX PROBLEMS AND DESIGNING NEW SYSTEMS</that>
+        <template><srai>YES I DO</srai></template>
+    </category>
+    
+    <category>
+        <pattern>NO I DO NOT</pattern>
+        <that>DO YOU ALSO ENJOY SOLVING COMPLEX PROBLEMS AND DESIGNING NEW SYSTEMS</that>
+        <template>
+            <think><srai>_ SET PROBLEM SOLVING INTEREST FALSE</srai></think>
+            Understood. If designing systems isn't your primary interest, are you more inclined towards analyzing data and finding patterns?
+        </template>
+    </category>
+    <category>
+        <pattern>NO</pattern>
+        <that>DO YOU ALSO ENJOY SOLVING COMPLEX PROBLEMS AND DESIGNING NEW SYSTEMS</that>
+        <template><srai>NO I DO NOT</srai></template>
+    </category>
+    <category>
+        <pattern>NOPE</pattern>
+        <that>DO YOU ALSO ENJOY SOLVING COMPLEX PROBLEMS AND DESIGNING NEW SYSTEMS</that>
+        <template><srai>NO I DO NOT</srai></template>
+    </category>
+    <category>
+        <pattern>NOT REALLY</pattern>
+        <that>DO YOU ALSO ENJOY SOLVING COMPLEX PROBLEMS AND DESIGNING NEW SYSTEMS</that>
+        <template><srai>NO I DO NOT</srai></template>
+    </category>
+    
+    <category>
+        <pattern>_ SET PROBLEM SOLVING INTEREST *</pattern>
+        <template>
+            <set name="problem_solving_interest"><star/></set>
+        </template>
+    </category>
+    
 
     <!-- Follow-up question: Do you also enjoy solving complex problems and designing new systems? -->
     <category>
@@ -458,68 +513,85 @@
 
     <!-- General "Tell me more" for job types -->
     <category>
-        <pattern>TELL ME MORE ABOUT SOFTWARE DEVELOPERS</pattern>
-        <template><srai>WHAT IS A SOFTWARE DEVELOPER</srai></template>
-    </category>
-    <category>
-        <pattern>WHAT IS A SOFTWARE DEVELOPER</pattern>
+        <pattern>DEFINITION SOFTWARE DEVELOPER</pattern>
         <template>
             Software Developers design, develop, and maintain software applications. They need strong programming skills in languages like Python, Java, or C++, problem-solving abilities, and often collaborate in teams. They work in almost every industry, from tech companies to finance and healthcare.
             <br/>
             Does that sound interesting, <get name="name"/>?
         </template>
     </category>
-
+    
     <category>
-        <pattern>TELL ME MORE ABOUT DATA SCIENTISTS</pattern>
-        <template><srai>WHAT IS A DATA SCIENTIST</srai></template>
-    </category>
-    <category>
-        <pattern>WHAT IS A DATA SCIENTIST</pattern>
+        <pattern>DEFINITION DATA SCIENTIST</pattern>
         <template>
             Data Scientists collect, clean, analyze, and interpret large datasets to uncover trends and insights. They use statistics, machine learning, and programming (often Python or R). They're highly valued in industries like finance, marketing, healthcare, and research for their ability to drive data-driven decisions.
             <br/>
-            Does this path align with your goals, <get name="name"/>/>?
+            Does this path align with your goals, <get name="name"/>?
         </template>
     </category>
-
+    
     <category>
-        <pattern>TELL ME MORE ABOUT CYBERSECURITY ANALYSTS</pattern>
-        <template><srai>WHAT IS A CYBERSECURITY ANALYST</srai></template>
-    </category>
-    <category>
-        <pattern>WHAT IS A CYBERSECURITY ANALYST</pattern>
+        <pattern>DEFINITION</pattern>
         <template>
-            Cybersecurity Analysts protect an organization's computer systems and networks from cyber threats. They identify vulnerabilities, implement security measures, monitor for attacks, and respond to incidents. Strong analytical skills, knowledge of network security, and an understanding of ethical hacking are key. They are crucial in all sectors that handle sensitive data.
-            <br/>
-            Is protecting systems your passion, <get name="name"/>?
+            I'm sorry, I don't have information on that specific role. You can ask me about Software Developers, Data Scientists, Cybersecurity Analysts, Web Developers, or Network Engineers.
         </template>
     </category>
-
+    
     <category>
-        <pattern>TELL ME MORE ABOUT WEB DEVELOPERS</pattern>
-        <template><srai>WHAT IS A WEB DEVELOPER</srai></template>
-    </category>
-    <category>
-        <pattern>WHAT IS A WEB DEVELOPER</pattern>
+        <pattern>DEFINITION *</pattern>
         <template>
-            Web Developers build and maintain websites. Front-end developers focus on the user interface (what you see and interact with) using HTML, CSS, and JavaScript. Back-end developers work on the server, databases, and application logic. They are needed in virtually every industry to create and manage online presences.
-            <br/>
-            Does building for the web excite you, <get name="name"/>?
+            I have a definition for <star/>, but something went wrong. Please try again or ask about one of the main roles: Software Developer, Data Scientist, Cybersecurity Analyst, Web Developer, or Network Engineer.
         </template>
     </category>
-
+    
+    
     <category>
-        <pattern>TELL ME MORE ABOUT NETWORK ENGINEERS</pattern>
-        <template><srai>WHAT IS A NETWORK ENGINEER</srai></template>
-    </category>
-    <category>
-        <pattern>WHAT IS A NETWORK ENGINEER</pattern>
+        <pattern>TELL ME MORE ABOUT *</pattern>
         <template>
-            Network Engineers design, implement, and manage computer networks, ensuring smooth data flow and connectivity. They work with routers, switches, firewalls, and network protocols. Strong problem-solving skills and a deep understanding of network architecture are essential. They are vital for any organization with a significant IT infrastructure.
-            <br/>
-            Are you interested in the backbone of computing, <get name="name"/>?
+            <srai>DEFINITION <map name="jobroles"><star/></map></srai>
         </template>
+    </category>
+    
+    <category>
+        <pattern>WHAT IS A *</pattern>
+        <template>
+            <srai>DEFINITION <map name="jobroles"><star/></map></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>TELL ME ABOUT *</pattern>
+        <template>
+            <srai>DEFINITION <map name="jobroles"><star/></map></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>INFO ON *</pattern>
+        <template>
+            <srai>DEFINITION <map name="jobroles"><star/></map></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* DEVELOPER</pattern> <template>
+            <srai>DEFINITION <map name="jobroles"><star/> DEVELOPER</map></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>* ANALYST</pattern> <template>
+            <srai>DEFINITION <map name="jobroles"><star/> ANALYST</map></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>WHAT IS A SOFTWARE DEVELOPER</pattern>
+        <template><srai>DEFINITION SOFTWARE DEVELOPER</srai></template>
+    </category>
+    <category>
+        <pattern>TELL ME ABOUT DATA SCIENTISTS</pattern>
+        <template><srai>DEFINITION DATA SCIENTIST</srai></template>
     </category>
 
     <!-- General "yes" and "no" for follow-up questions -->
