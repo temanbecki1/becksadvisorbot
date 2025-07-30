@@ -112,8 +112,8 @@
         <pattern>YES I AM</pattern>
         <that>ARE YOU MORE INTERESTED IN ANALYZING DATA AND FINDING PATTERNS</that>
         <template>
+            <think><srai>_ SET DATA ANALYSIS INTEREST </srai></think>
             That's great! Data analysis is a highly in-demand skill. Would you like to know more about Data Scientists or Cybersecurity Analysts?
-            <set name="data_analysis_interest">true</set>
         </template>
     </category>
 
@@ -139,8 +139,8 @@
         <pattern>NO I AM NOT</pattern>
         <that>ARE YOU MORE INTERESTED IN ANALYZING DATA AND FINDING PATTERNS</that>
         <template>
+            <think><srai>_ SET DATA ANALYSIS INTEREST FALSE</srai></think>
             Okay, if not data analysis, are you more inclined towards managing infrastructure or ensuring system security?
-            <set name="data_analysis_interest">false</set>
         </template>
     </category>
     
@@ -161,14 +161,21 @@
         <that>ARE YOU MORE INTERESTED IN ANALYZING DATA AND FINDING PATTERNS</that>
         <template><srai>NO I AM NOT</srai></template>
     </category>
+    
+    <category>
+        <pattern>_ SET DATA ANALYSIS INTEREST *</pattern>
+        <template>
+            <set name="data_analysis_interest"><star/></set>
+        </template>
+    </category>
 
 
     <!-- Data Science Path: Do you also enjoy working with statistics, machine learning, and extracting insights from large datasets? -->
     <category>
         <pattern>YES I LIKE ANALYZING DATA</pattern>
         <template>
+            <think><srai>_ SET DATA INTEREST TRUE</srai></think>
             That's fantastic! Do you also enjoy working with statistics, machine learning, and extracting insights from large datasets?
-            <set name="data_interest">true</set>
         </template>
     </category>
     <category>
@@ -191,8 +198,8 @@
         <pattern>YES I DO</pattern>
         <that>DO YOU ALSO ENJOY WORKING WITH STATISTICS MACHINE LEARNING AND EXTRACTING INSIGHTS FROM LARGE DATASETS</that>
         <template>
+            <think><srai>_ SET STATS ML INTEREST TRUE</srai></think>
             Wonderful! A Data Scientist or Data Analyst role might be perfect for you. Would you like to know more about Data Scientists? Or perhaps you're interested in cybersecurity?
-            <set name="stats_ml_interest">true</set>
         </template>
     </category>
 
@@ -200,8 +207,8 @@
         <pattern>NO</pattern>
         <that>DO YOU ALSO ENJOY WORKING WITH STATISTICS MACHINE LEARNING AND EXTRACTING INSIGHTS FROM LARGE DATASETS</that>
         <template>
+            <think><srai>_ SET DATA INTEREST FALSE</srai></think>
             Understood. If data analysis isn't your focus, are you interested in cybersecurity and protecting systems?
-            <set name="data_interest">false</set>
         </template>
     </category>
     <category>
@@ -219,6 +226,20 @@
         <that>DO YOU ALSO ENJOY WORKING WITH STATISTICS MACHINE LEARNING AND EXTRACTING INSIGHTS FROM LARGE DATASETS</that>
         <template><srai>NO</srai></template>
     </category>
+    
+    <category>
+        <pattern>_ SET DATA INTEREST *</pattern>
+        <template>
+            <set name="data_interest"><star/></set>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>_ SET STATS ML INTEREST *</pattern> <template>
+            <set name="stats_ml_interest"><star/></set>
+        </template>
+    </category>
+    
 
 
     <!-- Cybersecurity Path: Do you have a strong interest in protecting systems, identifying vulnerabilities, and responding to security incidents? -->
