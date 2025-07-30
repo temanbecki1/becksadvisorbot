@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
-	<!-- General Greetings and Introductions -->
+
+    <!-- General Greetings and Introductions -->
     <category>
         <pattern>HELLO</pattern>
         <template>
@@ -30,7 +31,8 @@
         <template><srai>MY NAME IS <star/></srai></template>
     </category>
     
-    
+    <!-- Handles just the name after asking "What's your name?" -->
+    <!-- The 'THAT' value is "WHAT IS YOUR NAME" based on Pandorabots metadata. -->
     <category>
         <pattern>*</pattern>
         <that>WHAT IS YOUR NAME</that>
@@ -39,24 +41,35 @@
         </template>
     </category>
     
-    <category>
-        <pattern>YES</pattern>
-        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
+    <!-- Initial interest question: Do you enjoy hands-on coding and building software? -->
+        <category>
+        <pattern>NO I DO NOT ENJOY CODING</pattern>
         <template>
-            Great! Coding is a fundamental skill. Do you also enjoy solving complex problems and designing new systems?
-            <set name="coding_interest">true</set>
+            No problem, not all computing roles are purely about coding. Are you more interested in analyzing data and finding patterns?
+            <set name="coding_interest">false</set>
         </template>
+    </category>
+    <category>
+        <pattern>NO</pattern>
+        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
+        <template><srai>NO I DO NOT ENJOY CODING</srai></template>
+    </category>
+    <category>
+        <pattern>NOPE</pattern>
+        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
+        <template><srai>NO I DO NOT ENJOY CODING</srai></template>
+    </category>
+    <category>
+        <pattern>NOT REALLY</pattern>
+        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
+        <template><srai>NO I DO NOT ENJOY CODING</srai></template>
+    </category>
+    <category>
+        <pattern>NO SIR</pattern>
+        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
+        <template><srai>NO I DO NOT ENJOY CODING</srai></template>
     </category>
     
-    <category>
-        <pattern>YEA</pattern>
-        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
-        <template>
-            Great! Coding is a fundamental skill. Do you also enjoy solving complex problems and designing new systems?
-            <set name="coding_interest">true</set>
-        </template>
-    </category>
-
     <category>
         <pattern>YES I ENJOY CODING</pattern>
         <template>
@@ -64,7 +77,30 @@
             <set name="coding_interest">true</set>
         </template>
     </category>
+    <category>
+        <pattern>YES</pattern>
+        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
+        <template><srai>YES I ENJOY CODING</srai></template>
+    </category>
+    <category>
+        <pattern>YEA</pattern>
+        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
+        <template><srai>YES I ENJOY CODING</srai></template>
+    </category>
+    <category>
+        <pattern>YEP</pattern>
+        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
+        <template><srai>YES I ENJOY CODING</srai></template>
+    </category>
+    <category>
+        <pattern>SURE</pattern>
+        <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
+        <template><srai>YES I ENJOY CODING</srai></template>
+    </category>
 
+
+
+    <!-- Follow-up question: Do you also enjoy solving complex problems and designing new systems? -->
     <category>
         <pattern>YES I DO</pattern>
         <that>DO YOU ALSO ENJOY SOLVING COMPLEX PROBLEMS AND DESIGNING NEW SYSTEMS</that>
@@ -73,24 +109,46 @@
             <set name="problem_solving_interest">true</set>
         </template>
     </category>
-
     <category>
-        <pattern>NO *</pattern>
-        <template>
-            No problem, not all computing roles are purely about coding. Are you more interested in analyzing data and finding patterns?
-            <set name="coding_interest">false</set>
-        </template>
+        <pattern>YES</pattern>
+        <that>DO YOU ALSO ENJOY SOLVING COMPLEX PROBLEMS AND DESIGNING NEW SYSTEMS</that>
+        <template><srai>YES I DO</srai></template>
+    </category>
+    <category>
+        <pattern>YEP</pattern>
+        <that>DO YOU ALSO ENJOY SOLVING COMPLEX PROBLEMS AND DESIGNING NEW SYSTEMS</that>
+        <template><srai>YES I DO</srai></template>
+    </category>
+    <category>
+        <pattern>SURE</pattern>
+        <that>DO YOU ALSO ENJOY SOLVING COMPLEX PROBLEMS AND DESIGNING NEW SYSTEMS</that>
+        <template><srai>YES I DO</srai></template>
     </category>
 
-    <!-- Interest-based questions and recommendations -->
 
-    <!-- Data Science Path -->
+
+    <!-- Data Science Path: Do you also enjoy working with statistics, machine learning, and extracting insights from large datasets? -->
     <category>
         <pattern>YES I LIKE ANALYZING DATA</pattern>
         <template>
             That's fantastic! Do you also enjoy working with statistics, machine learning, and extracting insights from large datasets?
             <set name="data_interest">true</set>
         </template>
+    </category>
+    <category>
+        <pattern>YES</pattern>
+        <that>DO YOU ALSO ENJOY WORKING WITH STATISTICS MACHINE LEARNING AND EXTRACTING INSIGHTS FROM LARGE DATASETS</that>
+        <template><srai>YES I DO</srai></template> <!-- Reusing YES I DO for consistency -->
+    </category>
+    <category>
+        <pattern>YEP</pattern>
+        <that>DO YOU ALSO ENJOY WORKING WITH STATISTICS MACHINE LEARNING AND EXTRACTING INSIGHTS FROM LARGE DATASETS</that>
+        <template><srai>YES I DO</srai></template>
+    </category>
+    <category>
+        <pattern>SURE</pattern>
+        <that>DO YOU ALSO ENJOY WORKING WITH STATISTICS MACHINE LEARNING AND EXTRACTING INSIGHTS FROM LARGE DATASETS</that>
+        <template><srai>YES I DO</srai></template>
     </category>
 
     <category>
@@ -102,13 +160,53 @@
         </template>
     </category>
 
-    <!-- Cybersecurity Path -->
+    <category>
+        <pattern>NO</pattern>
+        <that>DO YOU ALSO ENJOY WORKING WITH STATISTICS MACHINE LEARNING AND EXTRACTING INSIGHTS FROM LARGE DATASETS</that>
+        <template>
+            Understood. If data analysis isn't your focus, are you interested in cybersecurity and protecting systems?
+            <set name="data_interest">false</set>
+        </template>
+    </category>
+    <category>
+        <pattern>NOPE</pattern>
+        <that>DO YOU ALSO ENJOY WORKING WITH STATISTICS MACHINE LEARNING AND EXTRACTING INSIGHTS FROM LARGE DATASETS</that>
+        <template><srai>NO</srai></template>
+    </category>
+    <category>
+        <pattern>NOT REALLY</pattern>
+        <that>DO YOU ALSO ENJOY WORKING WITH STATISTICS MACHINE LEARNING AND EXTRACTING INSIGHTS FROM LARGE DATASETS</that>
+        <template><srai>NO</srai></template>
+    </category>
+    <category>
+        <pattern>NO I DONT</pattern>
+        <that>DO YOU ALSO ENJOY WORKING WITH STATISTICS MACHINE LEARNING AND EXTRACTING INSIGHTS FROM LARGE DATASETS</that>
+        <template><srai>NO</srai></template>
+    </category>
+
+
+    <!-- Cybersecurity Path: Do you have a strong interest in protecting systems, identifying vulnerabilities, and responding to security incidents? -->
     <category>
         <pattern>YES I AM INTERESTED IN CYBERSECURITY</pattern>
         <template>
             Intriguing! Do you have a strong interest in protecting systems, identifying vulnerabilities, and responding to security incidents?
             <set name="cyber_interest">true</set>
         </template>
+    </category>
+    <category>
+        <pattern>YES</pattern>
+        <that>DO YOU HAVE A STRONG INTEREST IN PROTECTING SYSTEMS IDENTIFYING VULNERABILITIES AND RESPONDING TO SECURITY INCIDENTS</that>
+        <template><srai>YES I DO</srai></template>
+    </category>
+    <category>
+        <pattern>YEP</pattern>
+        <that>DO YOU HAVE A STRONG INTEREST IN PROTECTING SYSTEMS IDENTIFYING VULNERABILITIES AND RESPONDING TO SECURITY INCIDENTS</that>
+        <template><srai>YES I DO</srai></template>
+    </category>
+    <category>
+        <pattern>SURE</pattern>
+        <that>DO YOU HAVE A STRONG INTEREST IN PROTECTING SYSTEMS IDENTIFYING VULNERABILITIES AND RESPONDING TO SECURITY INCIDENTS</that>
+        <template><srai>YES I DO</srai></template>
     </category>
 
     <category>
@@ -120,13 +218,53 @@
         </template>
     </category>
 
-    <!-- Web Development Path -->
+    <category>
+        <pattern>NO</pattern>
+        <that>DO YOU HAVE A STRONG INTEREST IN PROTECTING SYSTEMS IDENTIFYING VULNERABILITIES AND RESPONDING TO SECURITY INCIDENTS</that>
+        <template>
+            I see. How about building websites and creating engaging online experiences? Does web development appeal to you?
+            <set name="cyber_interest">false</set>
+        </template>
+    </category>
+    <category>
+        <pattern>NOPE</pattern>
+        <that>DO YOU HAVE A STRONG INTEREST IN PROTECTING SYSTEMS IDENTIFYING VULNERABILITIES AND RESPONDING TO SECURITY INCIDENTS</that>
+        <template><srai>NO</srai></template>
+    </category>
+    <category>
+        <pattern>NOT REALLY</pattern>
+        <that>DO YOU HAVE A STRONG INTEREST IN PROTECTING SYSTEMS IDENTIFYING VULNERABILITIES AND RESPONDING TO SECURITY INCIDENTS</that>
+        <template><srai>NO</srai></template>
+    </category>
+    <category>
+        <pattern>NO I DONT</pattern>
+        <that>DO YOU HAVE A STRONG INTEREST IN PROTECTING SYSTEMS IDENTIFYING VULNERABILITIES AND RESPONDING TO SECURITY INCIDENTS</that>
+        <template><srai>NO</srai></template>
+    </category>
+
+
+    <!-- Web Development Path: Do you enjoy designing user interfaces, creating engaging web experiences, and perhaps working with databases for websites? -->
     <category>
         <pattern>YES I AM CURIOUS ABOUT WEB DEVELOPMENT</pattern>
         <template>
             Excellent! Do you enjoy designing user interfaces, creating engaging web experiences, and perhaps working with databases for websites?
             <set name="web_dev_interest">true</set>
         </template>
+    </category>
+    <category>
+        <pattern>YES</pattern>
+        <that>DO YOU ENJOY DESIGNING USER INTERFACES CREATING ENGAGING WEB EXPERIENCES AND PERHAPS WORKING WITH DATABASES FOR WEBSITES</that>
+        <template><srai>YES I DO</srai></template>
+    </category>
+    <category>
+        <pattern>YEP</pattern>
+        <that>DO YOU ENJOY DESIGNING USER INTERFACES CREATING ENGAGING WEB EXPERIENCES AND PERHAPS WORKING WITH DATABASES FOR WEBSITES</that>
+        <template><srai>YES I DO</srai></template>
+    </category>
+    <category>
+        <pattern>SURE</pattern>
+        <that>DO YOU ENJOY DESIGNING USER INTERFACES CREATING ENGAGING WEB EXPERIENCES AND PERHAPS WORKING WITH DATABASES FOR WEBSITES</that>
+        <template><srai>YES I DO</srai></template>
     </category>
 
     <category>
@@ -138,13 +276,53 @@
         </template>
     </category>
 
-    <!-- Network Engineer Path -->
+    <category>
+        <pattern>NO</pattern>
+        <that>DO YOU ENJOY DESIGNING USER INTERFACES CREATING ENGAGING WEB EXPERIENCES AND PERHAPS WORKING WITH DATABASES FOR WEBSITES</that>
+        <template>
+            Alright. What about the infrastructure side of things? Are you interested in designing and managing computer networks?
+            <set name="web_dev_interest">false</set>
+        </template>
+    </category>
+    <category>
+        <pattern>NOPE</pattern>
+        <that>DO YOU ENJOY DESIGNING USER INTERFACES CREATING ENGAGING WEB EXPERIENCES AND PERHAPS WORKING WITH DATABASES FOR WEBSITES</that>
+        <template><srai>NO</srai></template>
+    </category>
+    <category>
+        <pattern>NOT REALLY</pattern>
+        <that>DO YOU ENJOY DESIGNING USER INTERFACES CREATING ENGAGING WEB EXPERIENCES AND PERHAPS WORKING WITH DATABASES FOR WEBSITES</that>
+        <template><srai>NO</srai></template>
+    </category>
+    <category>
+        <pattern>NO I DONT</pattern>
+        <that>DO YOU ENJOY DESIGNING USER INTERFACES CREATING ENGAGING WEB EXPERIENCES AND PERHAPS WORKING WITH DATABASES FOR WEBSITES</that>
+        <template><srai>NO</srai></template>
+    </category>
+
+
+    <!-- Network Engineer Path: Do you enjoy setting up, maintaining, and troubleshooting computer networks and ensuring connectivity? -->
     <category>
         <pattern>YES I AM INTERESTED IN NETWORK INFRASTRUCTURE</pattern>
         <template>
             That's a foundational area of computing! Do you enjoy setting up, maintaining, and troubleshooting computer networks and ensuring connectivity?
             <set name="network_interest">true</set>
         </template>
+    </category>
+    <category>
+        <pattern>YES</pattern>
+        <that>DO YOU ENJOY SETTING UP MAINTAINING AND TROUBLESHOOTING COMPUTER NETWORKS AND ENSURING CONNECTIVITY</that>
+        <template><srai>YES I DO</srai></template>
+    </category>
+    <category>
+        <pattern>YEP</pattern>
+        <that>DO YOU ENJOY SETTING UP MAINTAINING AND TROUBLESHOOTING COMPUTER NETWORKS AND ENSURING CONNECTIVITY</that>
+        <template><srai>YES I DO</srai></template>
+    </category>
+    <category>
+        <pattern>SURE</pattern>
+        <that>DO YOU ENJOY SETTING UP MAINTAINING AND TROUBLESHOOTING COMPUTER NETWORKS AND ENSURING CONNECTIVITY</that>
+        <template><srai>YES I DO</srai></template>
     </category>
 
     <category>
@@ -155,6 +333,31 @@
             <set name="network_maint_interest">true</set>
         </template>
     </category>
+
+    <category>
+        <pattern>NO</pattern>
+        <that>DO YOU ENJOY SETTING UP MAINTAINING AND TROUBLESHOOTING COMPUTER NETWORKS AND ENSURING CONNECTIVITY</that>
+        <template>
+            Understood. It seems none of these specific areas fully align. Perhaps you could tell me in your own words what aspects of computer science excite you the most? Or would you like me to suggest another general area?
+            <set name="network_interest">false</set>
+        </template>
+    </category>
+    <category>
+        <pattern>NOPE</pattern>
+        <that>DO YOU ENJOY SETTING UP MAINTAINING AND TROUBLESHOOTING COMPUTER NETWORKS AND ENSURING CONNECTIVITY</that>
+        <template><srai>NO</srai></template>
+    </category>
+    <category>
+        <pattern>NOT REALLY</pattern>
+        <that>DO YOU ENJOY SETTING UP MAINTAINING AND TROUBLESHOOTING COMPUTER NETWORKS AND ENSURING CONNECTIVITY</that>
+        <template><srai>NO</srai></template>
+    </category>
+    <category>
+        <pattern>NO I DONT</pattern>
+        <that>DO YOU ENJOY SETTING UP MAINTAINING AND TROUBLESHOOTING COMPUTER NETWORKS AND ENSURING CONNECTIVITY</that>
+        <template><srai>NO</srai></template>
+    </category>
+
 
     <!-- General "Tell me more" for job types -->
     <category>
@@ -179,7 +382,7 @@
         <template>
             Data Scientists collect, clean, analyze, and interpret large datasets to uncover trends and insights. They use statistics, machine learning, and programming (often Python or R). They're highly valued in industries like finance, marketing, healthcare, and research for their ability to drive data-driven decisions.
             <br/>
-            Does this path align with your goals, <get name="name"/>?
+            Does this path align with your goals, <get name="name"/>/>?
         </template>
     </category>
 
@@ -219,47 +422,6 @@
             Network Engineers design, implement, and manage computer networks, ensuring smooth data flow and connectivity. They work with routers, switches, firewalls, and network protocols. Strong problem-solving skills and a deep understanding of network architecture are essential. They are vital for any organization with a significant IT infrastructure.
             <br/>
             Are you interested in the backbone of computing, <get name="name"/>?
-        </template>
-    </category>
-
-    <!-- Handling "No" or "Not interested" -->
-    <category>
-        <pattern>NO</pattern>
-        <that>DO YOU ENJOY HANDS ON CODING AND BUILDING SOFTWARE</that>
-        <template>
-            Okay, perhaps coding isn't your primary interest. How about analyzing data and finding patterns?
-        </template>
-    </category>
-
-    <category>
-        <pattern>NO</pattern>
-        <that>DO YOU ALSO ENJOY WORKING WITH STATISTICS MACHINE LEARNING AND EXTRACTING INSIGHTS FROM LARGE DATASETS</that>
-        <template>
-            Understood. If data analysis isn't your focus, are you interested in cybersecurity and protecting systems?
-        </template>
-    </category>
-
-    <category>
-        <pattern>NO</pattern>
-        <that>DO YOU HAVE A STRONG INTEREST IN PROTECTING SYSTEMS IDENTIFYING VULNERABILITIES AND RESPONDING TO SECURITY INCIDENTS</that>
-        <template>
-            I see. How about building websites and creating engaging online experiences? Does web development appeal to you?
-        </template>
-    </category>
-
-    <category>
-        <pattern>NO</pattern>
-        <that>DO YOU ENJOY DESIGNING USER INTERFACES CREATING ENGAGING WEB EXPERIENCES AND PERHAPS WORKING WITH DATABASES FOR WEBSITES</that>
-        <template>
-            Alright. What about the infrastructure side of things? Are you interested in designing and managing computer networks?
-        </template>
-    </category>
-
-    <category>
-        <pattern>NO</pattern>
-        <that>DO YOU ENJOY SETTING UP MAINTAINING AND TROUBLESHOOTING COMPUTER NETWORKS AND ENSURING CONNECTIVITY</that>
-        <template>
-            Understood. It seems none of these specific areas fully align. Perhaps you could tell me in your own words what aspects of computer science excite you the most? Or would you like me to suggest another general area?
         </template>
     </category>
 
@@ -340,7 +502,7 @@
         <pattern>NO</pattern>
         <that>ARE YOU INTERESTED IN THE BACKBONE OF COMPUTING *</that>
         <template>
-            Understood. It seems we need to find a better fit. Could you tell me more about what you envision yourself doing after graduation?
+            Understood. It seems none of these specific areas fully align. Perhaps you could tell me in your own words what aspects of computer science excite you the most? Or would you like me to suggest another general area?
         </template>
     </category>
 
@@ -376,6 +538,5 @@
             I'm still learning, <get name="name"/>. Could you please rephrase that, or tell me more about your interests in computer science careers? You can ask me about Software Developers, Data Scientists, Cybersecurity Analysts, Web Developers, or Network Engineers.
         </template>
     </category>
-
 
 </aiml>
