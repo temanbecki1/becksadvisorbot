@@ -45,8 +45,8 @@
         <category>
         <pattern>NO I DO NOT ENJOY CODING</pattern>
         <template>
+            <think><srai>_ SET CODING INTEREST FALSE</srai> </think>
             No problem, not all computing roles are purely about coding. Are you more interested in analyzing data and finding patterns?
-            <set name="coding_interest">false</set>
         </template>
     </category>
     <category>
@@ -73,8 +73,8 @@
     <category>
         <pattern>YES I ENJOY CODING</pattern>
         <template>
+            <think><srai>_ SET CODING INTEREST TRUE</srai></think>
             Great! Coding is a fundamental skill. Do you also enjoy solving complex problems and designing new systems?
-            <set name="coding_interest">true</set>
         </template>
     </category>
     <category>
@@ -97,34 +97,70 @@
         <that>FOR EXAMPLE, DO YOU ENJOY HANDS DASH ON CODING AND BUILDING SOFTWARE</that>
         <template><srai>YES I ENJOY CODING</srai></template>
     </category>
+    
+    <category>
+        <pattern>_ SET CODING INTEREST *</pattern>
+        <template>
+            <set name="coding_interest"><star/></set>
+        </template>
+    </category>
 
 
 
     <!-- Follow-up question: Do you also enjoy solving complex problems and designing new systems? -->
     <category>
-        <pattern>YES I DO</pattern>
-        <that>DO YOU ALSO ENJOY SOLVING COMPLEX PROBLEMS AND DESIGNING NEW SYSTEMS</that>
+        <pattern>YES I AM</pattern>
+        <that>ARE YOU MORE INTERESTED IN ANALYZING DATA AND FINDING PATTERNS</that>
         <template>
-            Excellent! That sounds like a strong fit for a Software Developer role. Would you like to know more about Software Developers? Or tell me if you have other interests, like analyzing data?
-            <set name="problem_solving_interest">true</set>
+            That's great! Data analysis is a highly in-demand skill. Would you like to know more about Data Scientists or Cybersecurity Analysts?
+            <set name="data_analysis_interest">true</set>
         </template>
     </category>
+
     <category>
         <pattern>YES</pattern>
-        <that>DO YOU ALSO ENJOY SOLVING COMPLEX PROBLEMS AND DESIGNING NEW SYSTEMS</that>
-        <template><srai>YES I DO</srai></template>
+        <that>ARE YOU MORE INTERESTED IN ANALYZING DATA AND FINDING PATTERNS</that>
+        <template><srai>YES I AM</srai></template>
     </category>
+    
     <category>
         <pattern>YEP</pattern>
-        <that>DO YOU ALSO ENJOY SOLVING COMPLEX PROBLEMS AND DESIGNING NEW SYSTEMS</that>
-        <template><srai>YES I DO</srai></template>
+        <that>ARE YOU MORE INTERESTED IN ANALYZING DATA AND FINDING PATTERNS</that>
+        <template><srai>YES I AM</srai></template>
     </category>
+    
     <category>
         <pattern>SURE</pattern>
-        <that>DO YOU ALSO ENJOY SOLVING COMPLEX PROBLEMS AND DESIGNING NEW SYSTEMS</that>
-        <template><srai>YES I DO</srai></template>
+        <that>ARE YOU MORE INTERESTED IN ANALYZING DATA AND FINDING PATTERNS</that>
+        <template><srai>YES I AM</srai></template>
     </category>
-
+    
+    <category>
+        <pattern>NO I AM NOT</pattern>
+        <that>ARE YOU MORE INTERESTED IN ANALYZING DATA AND FINDING PATTERNS</that>
+        <template>
+            Okay, if not data analysis, are you more inclined towards managing infrastructure or ensuring system security?
+            <set name="data_analysis_interest">false</set>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>NO</pattern>
+        <that>ARE YOU MORE INTERESTED IN ANALYZING DATA AND FINDING PATTERNS</that>
+        <template><srai>NO I AM NOT</srai></template>
+    </category>
+    
+    <category>
+        <pattern>NOPE</pattern>
+        <that>ARE YOU MORE INTERESTED IN ANALYZING DATA AND FINDING PATTERNS</that>
+        <template><srai>NO I AM NOT</srai></template>
+    </category>
+    
+    <category>
+        <pattern>NOT REALLY</pattern>
+        <that>ARE YOU MORE INTERESTED IN ANALYZING DATA AND FINDING PATTERNS</that>
+        <template><srai>NO I AM NOT</srai></template>
+    </category>
 
 
     <!-- Data Science Path: Do you also enjoy working with statistics, machine learning, and extracting insights from large datasets? -->
