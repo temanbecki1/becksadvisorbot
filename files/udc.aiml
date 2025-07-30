@@ -389,8 +389,8 @@
     <category>
         <pattern>YES I AM INTERESTED IN NETWORK INFRASTRUCTURE</pattern>
         <template>
+            <think><srai>_ SET NETWORK INTEREST TRUE</srai></think>
             That's a foundational area of computing! Do you enjoy setting up, maintaining, and troubleshooting computer networks and ensuring connectivity?
-            <set name="network_interest">true</set>
         </template>
     </category>
     <category>
@@ -413,8 +413,8 @@
         <pattern>YES I DO</pattern>
         <that>DO YOU ENJOY SETTING UP MAINTAINING AND TROUBLESHOOTING COMPUTER NETWORKS AND ENSURING CONNECTIVITY</that>
         <template>
+            <think><srai>_ SET NETWORK MAINT INTEREST TRUE</srai></think>
             Perfect! A Network Engineer role aligns well with those interests. I can tell you more about Network Engineers. Is there anything else you'd like to explore, or would you like to hear about a different job type?
-            <set name="network_maint_interest">true</set>
         </template>
     </category>
 
@@ -422,8 +422,8 @@
         <pattern>NO</pattern>
         <that>DO YOU ENJOY SETTING UP MAINTAINING AND TROUBLESHOOTING COMPUTER NETWORKS AND ENSURING CONNECTIVITY</that>
         <template>
+            <think><srai>_ SET NETWORK INTEREST FALSE</srai></think>
             Understood. It seems none of these specific areas fully align. Perhaps you could tell me in your own words what aspects of computer science excite you the most? Or would you like me to suggest another general area?
-            <set name="network_interest">false</set>
         </template>
     </category>
     <category>
@@ -442,6 +442,19 @@
         <template><srai>NO</srai></template>
     </category>
 
+    <category>
+        <pattern>_ SET NETWORK INTEREST *</pattern>
+        <template>
+            <set name="network_interest"><star/></set>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>_ SET NETWORK MAINT INTEREST *</pattern>
+        <template>
+            <set name="network_maint_interest"><star/></set>
+        </template>
+    </category>
 
     <!-- General "Tell me more" for job types -->
     <category>
