@@ -800,6 +800,64 @@
         <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
         <template><srai>TELL ME MORE ABOUT NETWORK ENGINEERS</srai></template>
     </category>
+    
+    <category>
+        <pattern>REACT</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT WEB DEVELOPERS</srai></template>
+    </category>
+    
+    <category>
+        <pattern>HTML</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT WEB DEVELOPERS</srai></template>
+    </category>
+    
+    <category>
+        <pattern>WEBSITE</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT WEB DEVELOPERS</srai></template>
+    </category>
+    
+    <category>
+        <pattern>HACKER</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT CYBERSECURITY ANALYSTS</srai></template>
+    </category>
+    <category>
+        <pattern>HACKERS</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT CYBERSECURITY ANALYSTS</srai></template>
+    </category>
+    
+    <category>
+        <pattern>DEVOPS</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT NETWORK ENGINEERS</srai></template>
+    </category>
+    <category>
+        <pattern>CLOUD</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT NETWORK ENGINEERS</srai></template>
+    </category>
+    <category>
+        <pattern>ENGINEER</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT NETWORK ENGINEERS</srai></template>
+    </category>
+    
+    <category>
+        <pattern>PYTHON</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT SOFTWARE DEVELOPERS</srai></template> </category>
+    <category>
+        <pattern>MML</pattern> <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT DATA SCIENTISTS</srai></template>
+    </category>
+    <category>
+        <pattern>CHATGPT</pattern> <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT DATA SCIENTISTS</srai></template>
+    </category>
         
     
     <category>
@@ -903,6 +961,12 @@
             Wonderful! Is there anything specific about Cybersecurity Analyst that you'd like to know, or should we move on to another role?
         </template>
     </category>
+    
+    <category>
+        <pattern>CYBERSECURITY</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT CYBERSECURITY ANALYSTS</srai></template>
+    </category>
 
     <category>
         <pattern>NO</pattern>
@@ -962,7 +1026,27 @@
         <template><srai>YES</srai></template>
     </category>
     
-    
+    <category>
+        <pattern>SOFTWARE</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT SOFTWARE DEVELOPERS</srai></template>
+    </category>
+    <category>
+        <pattern>DATA</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT DATA SCIENTISTS</srai></template>
+    </category>
+    <category>
+        <pattern>NETWORK</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT NETWORK ENGINEERS</srai></template>
+    </category>
+    <category>
+        <pattern>WEB</pattern>
+        <that>YOU CAN ASK ME ABOUT SOFTWARE DEVELOPERS, DATA SCIENTISTS, CYBERSECURITY ANALYSTS, WEB DEVELOPERS, OR NETWORK ENGINEERS</that>
+        <template><srai>TELL ME MORE ABOUT WEB DEVELOPERS</srai></template>
+    </category>
+        
     <category>
         <pattern>NO</pattern>
         <that>WOULD YOU LIKE TO EXPLORE ANOTHER JOB TYPE, OR DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT THIS ONE</that>
@@ -1055,6 +1139,64 @@
         <pattern>NO THANKS</pattern>
         <that>DOES WEB DEVELOPMENT APPEAL TO YOU</that>
         <template><srai>NO</srai></template>
+    </category>
+    
+    <category>
+        <pattern>*</pattern>
+        <that>WOULD YOU LIKE TO EXPLORE ANOTHER JOB TYPE, OR DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT THIS ONE</that>
+        <template>
+            <srai>EXPLORE_JOB_TYPE <map name="jobroles"><star/></map></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>EXPLORE_JOB_TYPE_SOFTWARE_DEVELOPER</pattern>
+        <template><srai>DEFINITION SOFTWARE DEVELOPER</srai></template>
+    </category>
+    <category>
+        <pattern>EXPLORE_JOB_TYPE_DATA_SCIENTIST</pattern>
+        <template><srai>DEFINITION DATA SCIENTIST</srai></template>
+    </category>
+    <category>
+        <pattern>EXPLORE_JOB_TYPE_CYBERSECURITY_ANALYST</pattern>
+        <template><srai>DEFINITION CYBERSECURITY ANALYST</srai></template>
+    </category>
+    <category>
+        <pattern>EXPLORE_JOB_TYPE_WEB_DEVELOPER</pattern>
+        <template><srai>DEFINITION WEB DEVELOPER</srai></template>
+    </category>
+    <category>
+        <pattern>EXPLORE_JOB_TYPE_NETWORK_ENGINEER</pattern>
+        <template><srai>DEFINITION NETWORK ENGINEER</srai></template>
+    </category>
+    
+    <category>
+        <pattern>EXPLORE_JOB_TYPE *</pattern>
+        <template>
+            I'm not sure which specific job type you mean by "<star/>." Could you please choose one from Software Developers, Data Scientists, Cybersecurity Analysts, Web Developers, or Network Engineers?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>EXPLORE_JOB_TYPE</pattern>
+        <template>
+            I'm not sure which job type you mean. Could you please specify one from Software Developers, Data Scientists, Cybersecurity Analysts, Web Developers, or Network Engineers?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>YES</pattern>
+        <that>WOULD YOU LIKE TO EXPLORE ANOTHER JOB TYPE, OR DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT THIS ONE</that>
+        <template>
+            Excellent! Which job type are you interested in exploring? (e.g., Data Scientist, Cybersecurity Analyst)
+        </template>
+    </category>
+    <category>
+        <pattern>NO</pattern>
+        <that>WOULD YOU LIKE TO EXPLORE ANOTHER JOB TYPE, OR DO YOU HAVE ANY SPECIFIC QUESTIONS ABOUT THIS ONE</that>
+        <template>
+            Understood. What specific questions do you have about the previous job role we discussed?
+        </template>
     </category>
     
     <!-- Handling "Thank you" and "Goodbye" -->
